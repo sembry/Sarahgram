@@ -35,11 +35,11 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] Personalized the logo/branding of the app
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
+1. Direct messages (sending posts to other people, disappearing posts, etc.)
 2.
 
 ## Video Walkthrough
