@@ -14,6 +14,9 @@
 		71499EA520F411B400A2595F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71499EA420F411B400A2595F /* main.m */; };
 		71499EB020F4224200A2595F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71499EAF20F4224200A2595F /* LoginViewController.m */; };
 		71499EB320F42F7300A2595F /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71499EB220F42F7300A2595F /* FeedViewController.m */; };
+		71499EB920F5263B00A2595F /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 71499EB820F5263B00A2595F /* Post.m */; };
+		71499EBC20F52AD700A2595F /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71499EBB20F52AD700A2595F /* PostCell.m */; };
+		71499EBF20F52EEB00A2595F /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71499EBE20F52EEB00A2595F /* ComposeViewController.m */; };
 		FF37803911AFA9DA2ACC1017 /* libPods-Sarahgram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 381E194887204D88A5B8E020 /* libPods-Sarahgram.a */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +36,12 @@
 		71499EAF20F4224200A2595F /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		71499EB120F42F7300A2595F /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
 		71499EB220F42F7300A2595F /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
+		71499EB720F5263B00A2595F /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		71499EB820F5263B00A2595F /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		71499EBA20F52AD700A2595F /* PostCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCell.h; sourceTree = "<group>"; };
+		71499EBB20F52AD700A2595F /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
+		71499EBD20F52EEB00A2595F /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
+		71499EBE20F52EEB00A2595F /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +86,7 @@
 		71499E9420F411B200A2595F /* Sarahgram */ = {
 			isa = PBXGroup;
 			children = (
+				71499EB620F525FC00A2595F /* Models */,
 				71499E9520F411B200A2595F /* AppDelegate.h */,
 				71499E9620F411B200A2595F /* AppDelegate.m */,
 				71499E9B20F411B200A2595F /* Main.storyboard */,
@@ -84,12 +94,33 @@
 				71499EA020F411B400A2595F /* LaunchScreen.storyboard */,
 				71499EA320F411B400A2595F /* Info.plist */,
 				71499EA420F411B400A2595F /* main.m */,
+				71499EB420F525E100A2595F /* View Controllers */,
+				71499EBA20F52AD700A2595F /* PostCell.h */,
+				71499EBB20F52AD700A2595F /* PostCell.m */,
+			);
+			path = Sarahgram;
+			sourceTree = "<group>";
+		};
+		71499EB420F525E100A2595F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				71499EAE20F4224200A2595F /* LoginViewController.h */,
 				71499EAF20F4224200A2595F /* LoginViewController.m */,
 				71499EB120F42F7300A2595F /* FeedViewController.h */,
 				71499EB220F42F7300A2595F /* FeedViewController.m */,
+				71499EBD20F52EEB00A2595F /* ComposeViewController.h */,
+				71499EBE20F52EEB00A2595F /* ComposeViewController.m */,
 			);
-			path = Sarahgram;
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		71499EB620F525FC00A2595F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				71499EB720F5263B00A2595F /* Post.h */,
+				71499EB820F5263B00A2595F /* Post.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		9C50168A1A7472C3827E4F68 /* Frameworks */ = {
@@ -211,10 +242,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71499EB920F5263B00A2595F /* Post.m in Sources */,
 				71499EA520F411B400A2595F /* main.m in Sources */,
 				71499E9720F411B200A2595F /* AppDelegate.m in Sources */,
 				71499EB320F42F7300A2595F /* FeedViewController.m in Sources */,
+				71499EBF20F52EEB00A2595F /* ComposeViewController.m in Sources */,
 				71499EB020F4224200A2595F /* LoginViewController.m in Sources */,
+				71499EBC20F52AD700A2595F /* PostCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

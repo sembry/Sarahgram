@@ -9,9 +9,14 @@
 #import "FeedViewController.h"
 #import "AppDelegate.h"
 #import "LoginViewController.h"
+#import "PostCell.h"
+#import "Post.h"
 #import "Parse.h"
 
 @interface FeedViewController ()
+
+@property (strong, nonatomic) NSArray *posts;
+
 - (IBAction)didTapLogout:(id)sender;
 
 @end
@@ -54,4 +59,18 @@
         }
     }];
 }
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
+    Post *post = self.posts [indexPath.row];
+    //[cell ]
+    return cell;
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.posts.count;
+}
+
+
+
+
 @end
