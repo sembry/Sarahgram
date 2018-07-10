@@ -18,16 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Untitled-1" translatesAutoresizingMaskIntoConstraints="NO" id="12Y-88-fkL">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Untitled-1" translatesAutoresizingMaskIntoConstraints="NO" id="12Y-88-fkL">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconmonstr-instagram-11-240" translatesAutoresizingMaskIntoConstraints="NO" id="wcB-ph-IRI">
-                                <rect key="frame" x="91" y="194" width="192" height="192"/>
+                                <rect key="frame" x="67.5" y="170" width="240" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sarahgram" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xb-WZ-62h">
-                                <rect key="frame" x="95" y="396" width="185" height="49"/>
+                                <rect key="frame" x="95" y="418" width="185" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="41"/>
                                 <nil key="textColor"/>
@@ -35,6 +34,12 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="12Y-88-fkL" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="5CM-nb-8Gd"/>
+                            <constraint firstItem="12Y-88-fkL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DsW-Dg-pJ2"/>
+                            <constraint firstItem="12Y-88-fkL" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Dz3-sI-rXW"/>
+                            <constraint firstItem="12Y-88-fkL" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="dP3-lo-PWW"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
