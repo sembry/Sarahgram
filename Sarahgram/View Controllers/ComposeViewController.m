@@ -7,14 +7,19 @@
 //
 
 #import "ComposeViewController.h"
+#import "Post.h"
+#import "Parse.h"
 
 @interface ComposeViewController ()
+
+@property (strong, nonatomic) IBOutlet UITextView *caption;
+
 - (IBAction)didTapCancel:(id)sender;
 - (IBAction)didTapPost:(id)sender;
 
 
 @property (strong, nonatomic) IBOutlet UIButton *imagePlaceholder;
-@property (strong, nonatomic) UIImageView *resizedImage;
+@property (strong, nonatomic) UIImage *resizedImage;
 
 - (IBAction)didTapPlaceholder:(id)sender;
 
@@ -26,9 +31,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-
-
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -51,11 +56,37 @@
 }
 
 - (IBAction)didTapPost:(id)sender {
-    
+    [Post postUserImage:self.resizedImage withCaption:self.caption.text withCompletion:^(BOOL succeeded, NSError *_Nullable error){
+        if(!succeeded){
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+
 
 - (IBAction)didTapPlaceholder:(id)sender {
     [self selectPicture];
+}
+
+
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    // Get the image captured by the UIImagePickerController
+    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+    
+    // Do something with the images (based on your use case)
+    CGSize size = CGSizeMake(450, 450);
+    self.resizedImage = [self resizeImage:editedImage withSize:size];
+    [self.imagePlaceholder setImage:self.resizedImage  forState:UIControlStateNormal];
+    
+    //set the image as the post image or somethin??
+    
+    // Dismiss UIImagePickerController to go back to your original view controller
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(void) takePicture{
@@ -74,23 +105,6 @@
         imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     }
 }
-
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
-    
-    // Get the image captured by the UIImagePickerController
-    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
-    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
-    
-    // Do something with the images (based on your use case)
-    CGSize size = CGSizeMake(450, 450);
-    self.resizedImage = [self resizeImage:editedImage withSize:size];
-    [self.imagePlaceholder setImage:self.resizedImage forState:UIControlStateNormal];
-    
-    
-    // Dismiss UIImagePickerController to go back to your original view controller
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 
 -(void) selectPicture{
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];

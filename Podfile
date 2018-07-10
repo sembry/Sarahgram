@@ -7,4 +7,5 @@ target 'Sarahgram' do
 
   # Pods for Sarahgram
 	pod 'Parse'
+	pod 'AFNetworking'
 end

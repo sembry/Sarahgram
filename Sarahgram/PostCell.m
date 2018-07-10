@@ -7,6 +7,8 @@
 //
 
 #import "PostCell.h"
+#import "Post.h"
+#import "UIImageView+AFNetworking.h"
 
 @implementation PostCell
 
@@ -22,6 +24,12 @@
 }
 
 - (void) configureCell:(Post *) post{
+    self.caption.text = post.caption;
+    //get image URL from PFFile
+    NSURL *imageURL = [NSURL URLWithString:post.image.url];
+    [self.image setImageWithURL:imageURL];
+    
+    
     
 }
 
