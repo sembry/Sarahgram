@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		71499E9720F411B200A2595F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71499E9620F411B200A2595F /* AppDelegate.m */; };
-		71499E9A20F411B200A2595F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71499E9920F411B200A2595F /* ViewController.m */; };
 		71499E9D20F411B200A2595F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71499E9B20F411B200A2595F /* Main.storyboard */; };
 		71499E9F20F411B400A2595F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71499E9E20F411B400A2595F /* Assets.xcassets */; };
 		71499EA220F411B400A2595F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71499EA020F411B400A2595F /* LaunchScreen.storyboard */; };
 		71499EA520F411B400A2595F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71499EA420F411B400A2595F /* main.m */; };
+		71499EB020F4224200A2595F /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71499EAF20F4224200A2595F /* LoginViewController.m */; };
+		71499EB320F42F7300A2595F /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71499EB220F42F7300A2595F /* FeedViewController.m */; };
 		FF37803911AFA9DA2ACC1017 /* libPods-Sarahgram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 381E194887204D88A5B8E020 /* libPods-Sarahgram.a */; };
 /* End PBXBuildFile section */
 
@@ -23,13 +24,15 @@
 		71499E9220F411B200A2595F /* Sarahgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sarahgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71499E9520F411B200A2595F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		71499E9620F411B200A2595F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		71499E9820F411B200A2595F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		71499E9920F411B200A2595F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		71499E9C20F411B200A2595F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		71499E9E20F411B400A2595F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71499EA120F411B400A2595F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71499EA320F411B400A2595F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71499EA420F411B400A2595F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		71499EAE20F4224200A2595F /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		71499EAF20F4224200A2595F /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		71499EB120F42F7300A2595F /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
+		71499EB220F42F7300A2595F /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,13 +79,15 @@
 			children = (
 				71499E9520F411B200A2595F /* AppDelegate.h */,
 				71499E9620F411B200A2595F /* AppDelegate.m */,
-				71499E9820F411B200A2595F /* ViewController.h */,
-				71499E9920F411B200A2595F /* ViewController.m */,
 				71499E9B20F411B200A2595F /* Main.storyboard */,
 				71499E9E20F411B400A2595F /* Assets.xcassets */,
 				71499EA020F411B400A2595F /* LaunchScreen.storyboard */,
 				71499EA320F411B400A2595F /* Info.plist */,
 				71499EA420F411B400A2595F /* main.m */,
+				71499EAE20F4224200A2595F /* LoginViewController.h */,
+				71499EAF20F4224200A2595F /* LoginViewController.m */,
+				71499EB120F42F7300A2595F /* FeedViewController.h */,
+				71499EB220F42F7300A2595F /* FeedViewController.m */,
 			);
 			path = Sarahgram;
 			sourceTree = "<group>";
@@ -206,9 +211,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71499E9A20F411B200A2595F /* ViewController.m in Sources */,
 				71499EA520F411B400A2595F /* main.m in Sources */,
 				71499E9720F411B200A2595F /* AppDelegate.m in Sources */,
+				71499EB320F42F7300A2595F /* FeedViewController.m in Sources */,
+				71499EB020F4224200A2595F /* LoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

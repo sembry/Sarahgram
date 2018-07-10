@@ -19,6 +19,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     ParseClientConfiguration *config = [ParseClientConfiguration   configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
         configuration.applicationId = @"sarahgram";
+        //small possibility that this is the master key
         configuration.clientKey = nil;
         configuration.server = @"https://sarahgram.herokuapp.com/parse";
     }];
