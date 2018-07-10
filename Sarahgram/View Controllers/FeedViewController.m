@@ -13,9 +13,12 @@
 #import "Post.h"
 #import "Parse.h"
 
+
 @interface FeedViewController ()
 
 @property (strong, nonatomic) NSArray *posts;
+@property (weak, nonatomic) IBOutlet UITableView *postView;
+
 
 - (IBAction)didTapLogout:(id)sender;
 
@@ -26,6 +29,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.postView.dataSource = self;
+    self.postView.delegate = self;
+    self.postView.rowHeight = 500;
+    [self fetchPosts];
+}
+
+- (void) fetchPosts{
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    [query orderByDescending:@"createdAt"];
+    query.limit = 20;
+    
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+        if (posts != nil) {
+            //the array of objects returned by the call
+            self.posts = posts;
+            [self.postView reloadData];
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,8 +85,8 @@
 }
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
-    Post *post = self.posts [indexPath.row];
-    //[cell ]
+    Post *post = self.posts[indexPath.row];
+    [cell configureCell:post];
     return cell;
 }
 

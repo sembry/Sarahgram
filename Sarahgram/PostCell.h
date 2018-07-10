@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Post.h"
+#import "ParseUI.h"
 
 @interface PostCell : UITableViewCell
-@property (strong, nonatomic) IBOutlet UIImageView *image;
-@property (strong, nonatomic) IBOutlet UIButton *username;
+@property (weak, nonatomic) IBOutlet PFImageView *image;
+@property (weak, nonatomic) IBOutlet UILabel *username;
 @property (strong, nonatomic) IBOutlet UILabel *caption;
+@property (strong, nonatomic) Post *post;
 - (void) configureCell:(Post *) post;
 @end
