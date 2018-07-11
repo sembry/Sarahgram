@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -101,8 +102,7 @@
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_4649" translatesAutoresizingMaskIntoConstraints="NO" id="pRk-em-KAp" customClass="PFImageView">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="375" id="iFk-9H-BRZ"/>
-                                                        <constraint firstAttribute="height" constant="375" id="pP0-Aj-KTD"/>
+                                                        <constraint firstAttribute="width" secondItem="pRk-em-KAp" secondAttribute="height" multiplier="1:1" id="hXZ-Gi-GL1"/>
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7eG-bR-ibz">
@@ -111,7 +111,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZP-d7-e7t">
                                                             <rect key="frame" x="0.0" y="0.0" width="179.5" height="15.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" red="0.53146852923261234" green="0.37270627675233431" blue="0.76350333121827407" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I love 3 eyed aliens!!!!!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IcT-1t-Ivn">
@@ -124,12 +124,12 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="pRk-em-KAp" firstAttribute="top" secondItem="QsW-cj-GGb" secondAttribute="top" id="1No-EN-4Bn"/>
                                                 <constraint firstAttribute="trailing" secondItem="7eG-bR-ibz" secondAttribute="trailing" constant="8" id="9Ss-xa-uIJ"/>
+                                                <constraint firstItem="pRk-em-KAp" firstAttribute="leading" secondItem="QsW-cj-GGb" secondAttribute="leading" id="GkE-Ih-IQo"/>
+                                                <constraint firstAttribute="trailing" secondItem="pRk-em-KAp" secondAttribute="trailing" id="OhS-Oe-Bjr"/>
                                                 <constraint firstAttribute="bottom" secondItem="7eG-bR-ibz" secondAttribute="bottom" constant="8" id="QqC-YJ-4Dd"/>
-                                                <constraint firstItem="7eG-bR-ibz" firstAttribute="top" secondItem="pRk-em-KAp" secondAttribute="bottom" constant="8" id="bck-AT-dBE"/>
-                                                <constraint firstAttribute="trailing" secondItem="pRk-em-KAp" secondAttribute="trailing" id="l4e-5y-LG9"/>
-                                                <constraint firstItem="pRk-em-KAp" firstAttribute="leading" secondItem="QsW-cj-GGb" secondAttribute="leading" id="nbZ-of-sbe"/>
+                                                <constraint firstItem="7eG-bR-ibz" firstAttribute="top" secondItem="pRk-em-KAp" secondAttribute="bottom" constant="8" id="iGs-ZM-eZS"/>
+                                                <constraint firstItem="pRk-em-KAp" firstAttribute="top" secondItem="QsW-cj-GGb" secondAttribute="top" id="kOB-Db-CjF"/>
                                                 <constraint firstItem="7eG-bR-ibz" firstAttribute="leading" secondItem="QsW-cj-GGb" secondAttribute="leading" constant="8" id="wch-nh-eSz"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -137,6 +137,7 @@
                                             <outlet property="caption" destination="IcT-1t-Ivn" id="KyW-86-OQ2"/>
                                             <outlet property="image" destination="pRk-em-KAp" id="Pcq-u9-KAi"/>
                                             <outlet property="username" destination="FZP-d7-e7t" id="ObT-PZ-fT9"/>
+                                            <segue destination="LRe-cS-Zs4" kind="show" id="sRU-10-btv"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -164,6 +165,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jSb-9F-P9x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1741.5999999999999" y="86.806596701649184"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="tsc-hm-ISr">
+            <objects>
+                <viewController id="LRe-cS-Zs4" customClass="DetailsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vX8-tN-RT9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lhd-QB-lxE" customClass="PFImageView">
+                                <rect key="frame" x="0.0" y="92" width="375" height="375"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.52776227679999999" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulz-Ye-PEs">
+                                <rect key="frame" x="16" y="69" width="79" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.53146852919999998" green="0.37270627680000001" blue="0.76350333120000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKT-7k-y53">
+                                <rect key="frame" x="8" y="475" width="357" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dw4-NJ-J1T">
+                                <rect key="frame" x="262" y="69" width="103" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.53146852919999998" green="0.37270627680000001" blue="0.76350333120000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="9c4-ks-4u8"/>
+                    </view>
+                    <connections>
+                        <outlet property="caption" destination="SKT-7k-y53" id="VvQ-qA-EGb"/>
+                        <outlet property="date" destination="dw4-NJ-J1T" id="YwJ-qJ-NdU"/>
+                        <outlet property="postImage" destination="lhd-QB-lxE" id="MYg-sa-k0U"/>
+                        <outlet property="username" destination="ulz-Ye-PEs" id="IJh-UL-mzg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="22a-vY-kKM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2605.5999999999999" y="86.806596701649184"/>
         </scene>
         <!--Compose View Controller-->
         <scene sceneID="CKw-GG-qN2">
@@ -212,7 +262,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="USz-bi-KbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3269.5999999999999" y="86.806596701649184"/>
+            <point key="canvasLocation" x="2450" y="869"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GTv-ML-VHc">
@@ -248,7 +298,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="juZ-DX-3dj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2561" y="87"/>
+            <point key="canvasLocation" x="1742" y="869"/>
         </scene>
     </scenes>
     <resources>

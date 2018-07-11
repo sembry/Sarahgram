@@ -17,6 +17,7 @@
 		71499EB920F5263B00A2595F /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 71499EB820F5263B00A2595F /* Post.m */; };
 		71499EBC20F52AD700A2595F /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71499EBB20F52AD700A2595F /* PostCell.m */; };
 		71499EBF20F52EEB00A2595F /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71499EBE20F52EEB00A2595F /* ComposeViewController.m */; };
+		71CD5B5620F6A6BE009C12FA /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CD5B5520F6A6BE009C12FA /* DetailsViewController.m */; };
 		FF37803911AFA9DA2ACC1017 /* libPods-Sarahgram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 381E194887204D88A5B8E020 /* libPods-Sarahgram.a */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,8 @@
 		71499EBB20F52AD700A2595F /* PostCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCell.m; sourceTree = "<group>"; };
 		71499EBD20F52EEB00A2595F /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
 		71499EBE20F52EEB00A2595F /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
+		71CD5B5420F6A6BE009C12FA /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		71CD5B5520F6A6BE009C12FA /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +113,8 @@
 				71499EB220F42F7300A2595F /* FeedViewController.m */,
 				71499EBD20F52EEB00A2595F /* ComposeViewController.h */,
 				71499EBE20F52EEB00A2595F /* ComposeViewController.m */,
+				71CD5B5420F6A6BE009C12FA /* DetailsViewController.h */,
+				71CD5B5520F6A6BE009C12FA /* DetailsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -255,6 +260,7 @@
 				71499EBF20F52EEB00A2595F /* ComposeViewController.m in Sources */,
 				71499EB020F4224200A2595F /* LoginViewController.m in Sources */,
 				71499EBC20F52AD700A2595F /* PostCell.m in Sources */,
+				71CD5B5620F6A6BE009C12FA /* DetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
