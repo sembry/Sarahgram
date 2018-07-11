@@ -18,7 +18,7 @@
 
 @property (strong, nonatomic) NSArray *posts;
 @property (weak, nonatomic) IBOutlet UITableView *postView;
-
+@property(nonatomic, strong) UIRefreshControl *refreshControl;
 
 - (IBAction)didTapLogout:(id)sender;
 
@@ -31,9 +31,15 @@
     // Do any additional setup after loading the view.
     self.postView.dataSource = self;
     self.postView.delegate = self;
-    self.postView.rowHeight = 500;
+    //self.postView.rowHeight = 400;
     [self fetchPosts];
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(fetchPosts) forControlEvents:UIControlEventValueChanged];
+    [self.postView insertSubview:self.refreshControl atIndex:0];
 }
+
+
 
 - (void) fetchPosts{
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
@@ -50,6 +56,7 @@
             NSLog(@"%@", error.localizedDescription);
         }
     }];
+    [self.refreshControl endRefreshing];
 }
 
 - (void)didReceiveMemoryWarning {
