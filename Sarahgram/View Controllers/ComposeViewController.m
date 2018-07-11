@@ -17,6 +17,8 @@
 - (IBAction)didTapCancel:(id)sender;
 - (IBAction)didTapPost:(id)sender;
 
+- (IBAction)didTapSelect:(id)sender;
+
 
 @property (strong, nonatomic) IBOutlet UIButton *imagePlaceholder;
 @property (strong, nonatomic) UIImage *resizedImage;
@@ -64,10 +66,16 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)didTapSelect:(id)sender {
+    [self selectPicture];
+}
+
+
+
 
 
 - (IBAction)didTapPlaceholder:(id)sender {
-    [self selectPicture];
+    [self takePicture];
 }
 
 

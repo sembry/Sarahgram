@@ -137,7 +137,7 @@
                                             <outlet property="caption" destination="IcT-1t-Ivn" id="KyW-86-OQ2"/>
                                             <outlet property="image" destination="pRk-em-KAp" id="Pcq-u9-KAi"/>
                                             <outlet property="username" destination="FZP-d7-e7t" id="ObT-PZ-fT9"/>
-                                            <segue destination="LRe-cS-Zs4" kind="show" id="sRU-10-btv"/>
+                                            <segue destination="LRe-cS-Zs4" kind="show" identifier="detailSegue" id="sRU-10-btv"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -154,7 +154,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="insta_camera_btn" id="bjb-Pn-LSa">
                             <connections>
-                                <segue destination="Kbu-VT-kFS" kind="presentation" id="Zis-oM-FRw"/>
+                                <segue destination="Kbu-VT-kFS" kind="presentation" identifier="composeSegue" id="Zis-oM-FRw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -177,7 +177,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lhd-QB-lxE" customClass="PFImageView">
                                 <rect key="frame" x="0.0" y="92" width="375" height="375"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.52776227679999999" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulz-Ye-PEs">
                                 <rect key="frame" x="16" y="69" width="79" height="21"/>
@@ -206,7 +205,7 @@
                     </view>
                     <connections>
                         <outlet property="caption" destination="SKT-7k-y53" id="VvQ-qA-EGb"/>
-                        <outlet property="date" destination="dw4-NJ-J1T" id="YwJ-qJ-NdU"/>
+                        <outlet property="date" destination="dw4-NJ-J1T" id="cqB-tA-2iP"/>
                         <outlet property="postImage" destination="lhd-QB-lxE" id="MYg-sa-k0U"/>
                         <outlet property="username" destination="ulz-Ye-PEs" id="IJh-UL-mzg"/>
                     </connections>
@@ -232,13 +231,22 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Write a caption..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hR2-SI-bMO">
-                                <rect key="frame" x="188" y="64" width="183" height="184"/>
+                                <rect key="frame" x="188" y="64" width="183" height="214"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DsR-Ta-fQJ">
+                                <rect key="frame" x="0.0" y="248" width="184" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.81171875000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Select from Camera Roll"/>
+                                <connections>
+                                    <action selector="didTapSelect:" destination="lAI-I5-V8X" eventType="touchUpInside" id="C7c-5O-JLL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="tpV-Cz-UMp"/>
@@ -262,7 +270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="USz-bi-KbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2450" y="869"/>
+            <point key="canvasLocation" x="2448.8000000000002" y="868.51574212893559"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GTv-ML-VHc">
