@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "Parse.h"
 #import "ParseUI.h"
+#import "Post.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface EditProfileViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 

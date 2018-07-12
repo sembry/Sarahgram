@@ -18,6 +18,7 @@
 @property (strong, nonatomic) UIImage *resizedImage;
 - (IBAction)didTapPic:(id)sender;
 @property (strong, nonatomic) PFUser *user;
+@property (strong, nonatomic) UIImageView *profileImage;
 
 @end
 
@@ -28,9 +29,15 @@
     self.user = PFUser.currentUser;
     // Do any additional setup after loading the view.
     
-    //set properties of the property rn
     if(self.user[@"profileImage"] != nil){
-        [self.profilePic setImage:self.user[@"profileImage"] forState:UIControlStateNormal];
+        PFFile *profile = self.user[@"profileImage"];
+        NSURL *profileURL = [NSURL URLWithString:profile.url];
+        [self.profileImage setImageWithURL:profileURL];
+        
+        
+        [self.profilePic setImage:self.profileImage.image forState:UIControlStateNormal];
+       
+
     }
     if (![self.user[@"name"] isEqualToString:@""]) {
         self.name.text = self.user[@"name"];
@@ -107,9 +114,16 @@
     PFUser.currentUser[@"bio"] = self.bio.text;
     
     //change profile image
-    PFUser.currentUser[@"profileImage"] = [self getPFFileFromImage:self.resizedImage];
+    PFUser.currentUser[@"profileImage"] = [Post getPFFileFromImage:self.resizedImage];
 
-    [PFUser.currentUser saveInBackgroundWithBlock:nil];
+    [PFUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if(error){
+            NSLog(error.localizedDescription);
+        }
+        else{
+            NSLog(@"yay");
+        }
+    }];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
