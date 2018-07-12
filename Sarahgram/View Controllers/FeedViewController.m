@@ -31,6 +31,8 @@
     // Do any additional setup after loading the view.
     self.postView.dataSource = self;
     self.postView.delegate = self;
+    self.postView.rowHeight = UITableViewAutomaticDimension;
+    self.postView.estimatedRowHeight = 400;
     //self.postView.rowHeight = 400;
     [self fetchPosts];
 //    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
