@@ -47,10 +47,6 @@
     self.postImage.file = post[@"image"];
     [self.postImage loadInBackground];
     
-    //resize the scrollview to account for the full label length
-    CGFloat maxHeight = self.caption.frame.origin.y + self.caption.frame.size.height;
-    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, maxHeight);
-    
 }
 
 - (void)didReceiveMemoryWarning {

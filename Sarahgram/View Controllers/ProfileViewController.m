@@ -44,9 +44,14 @@
 */
 
 - (void) configureProfile:(PFUser *) user{
-    self.username.text = user.username;
+    self.username.text = [@"@" stringByAppendingString:user.username];
     self.name.text = user[@"name"];
     self.bio.text = user[@"bio"];
+    [self.bio sizeToFit];
+    
+    //IMAGE STUFF
+    self.profileImage.file = user[@"profileImage"];
+    [self.profileImage loadInBackground];
 }
 
 //- (IBAction)didTapEdit:(id)sender {

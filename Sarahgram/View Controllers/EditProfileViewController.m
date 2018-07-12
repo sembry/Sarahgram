@@ -27,6 +27,8 @@
     [super viewDidLoad];
     self.user = PFUser.currentUser;
     // Do any additional setup after loading the view.
+    
+    //set properties of the property rn
     if(self.user[@"profileImage"] != nil){
         [self.profilePic setImage:self.user[@"profileImage"] forState:UIControlStateNormal];
     }
@@ -67,7 +69,7 @@
     // Do something with the images (based on your use case)
     CGSize size = CGSizeMake(450, 450);
     self.resizedImage = [self resizeImage:editedImage withSize:size];
-    [self.profilePic setImage:self.resizedImage  forState:UIControlStateNormal];
+    [self.profilePic setImage:self.resizedImage forState:UIControlStateNormal];
     
     
     
@@ -101,6 +103,14 @@
 
 - (IBAction)didTapSave:(id)sender {
     PFUser.currentUser.username = self.username.text;
+    PFUser.currentUser[@"name"] = self.name.text;
+    PFUser.currentUser[@"bio"] = self.bio.text;
+    
+    //change profile image
+    PFUser.currentUser[@"profileImage"] = [self getPFFileFromImage:self.resizedImage];
+
+    [PFUser.currentUser saveInBackgroundWithBlock:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)didTapCancel:(id)sender {
