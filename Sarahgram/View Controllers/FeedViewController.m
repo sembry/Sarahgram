@@ -35,7 +35,6 @@
     self.postView.estimatedRowHeight = 400;
     //self.postView.rowHeight = 400;
     [self fetchPosts];
-//    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(fetchPosts) forControlEvents:UIControlEventValueChanged];
     [self.postView insertSubview:self.refreshControl atIndex:0];

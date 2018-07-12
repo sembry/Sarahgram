@@ -18,6 +18,8 @@
 		71499EBC20F52AD700A2595F /* PostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71499EBB20F52AD700A2595F /* PostCell.m */; };
 		71499EBF20F52EEB00A2595F /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71499EBE20F52EEB00A2595F /* ComposeViewController.m */; };
 		71CD5B5620F6A6BE009C12FA /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CD5B5520F6A6BE009C12FA /* DetailsViewController.m */; };
+		71CD5B5920F7F2E9009C12FA /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CD5B5820F7F2E9009C12FA /* ProfileViewController.m */; };
+		71CD5B5C20F7FA85009C12FA /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71CD5B5B20F7FA85009C12FA /* EditProfileViewController.m */; };
 		FF37803911AFA9DA2ACC1017 /* libPods-Sarahgram.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 381E194887204D88A5B8E020 /* libPods-Sarahgram.a */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +47,10 @@
 		71499EBE20F52EEB00A2595F /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
 		71CD5B5420F6A6BE009C12FA /* DetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		71CD5B5520F6A6BE009C12FA /* DetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		71CD5B5720F7F2E9009C12FA /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		71CD5B5820F7F2E9009C12FA /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		71CD5B5A20F7FA85009C12FA /* EditProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
+		71CD5B5B20F7FA85009C12FA /* EditProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +121,10 @@
 				71499EBE20F52EEB00A2595F /* ComposeViewController.m */,
 				71CD5B5420F6A6BE009C12FA /* DetailsViewController.h */,
 				71CD5B5520F6A6BE009C12FA /* DetailsViewController.m */,
+				71CD5B5720F7F2E9009C12FA /* ProfileViewController.h */,
+				71CD5B5820F7F2E9009C12FA /* ProfileViewController.m */,
+				71CD5B5A20F7FA85009C12FA /* EditProfileViewController.h */,
+				71CD5B5B20F7FA85009C12FA /* EditProfileViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -254,6 +264,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				71499EB920F5263B00A2595F /* Post.m in Sources */,
+				71CD5B5920F7F2E9009C12FA /* ProfileViewController.m in Sources */,
+				71CD5B5C20F7FA85009C12FA /* EditProfileViewController.m in Sources */,
 				71499EA520F411B400A2595F /* main.m in Sources */,
 				71499E9720F411B200A2595F /* AppDelegate.m in Sources */,
 				71499EB320F42F7300A2595F /* FeedViewController.m in Sources */,

@@ -29,8 +29,8 @@
     //make user persist if they don't choose to logout before closing the app
     if (PFUser.currentUser) {
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        //the first view controller the already logged in user will see is the navigation vc for the feed :)
-        self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"FeedViewController"];
+        //the first view controller the already logged in user will see is the tab bar controller for the feed :)
+        self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"TabController"];
     }
 
     return YES;
