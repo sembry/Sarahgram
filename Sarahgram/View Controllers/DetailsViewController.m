@@ -10,10 +10,12 @@
 #import "Post.h"
 
 @interface DetailsViewController ()
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UILabel *username;
 @property (weak, nonatomic) IBOutlet PFImageView *postImage;
 @property (weak, nonatomic) IBOutlet UILabel *caption;
 @property (weak, nonatomic) IBOutlet UILabel *date;
+
 
 @end
 
@@ -29,6 +31,7 @@
     self.post = post;
     self.username.text = post.userId;
     self.caption.text = post.caption;
+    [self.caption sizeToFit];
     
     //get date and format it
     NSDate *createdAt = post.createdAt;
@@ -43,6 +46,10 @@
     //set image
     self.postImage.file = post[@"image"];
     [self.postImage loadInBackground];
+    
+    //resize the scrollview to account for the full label length
+    CGFloat maxHeight = self.caption.frame.origin.y + self.caption.frame.size.height;
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width, maxHeight);
     
 }
 
