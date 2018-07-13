@@ -12,6 +12,7 @@
 #import "EditProfileViewController.h"
 #import "Post.h"
 #import "PostCollectionCell.h"
+#import "DetailsViewController.h"
 
 @interface ProfileViewController : UIViewController <EditProfileViewControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 @property (strong, nonatomic) PFUser *user;

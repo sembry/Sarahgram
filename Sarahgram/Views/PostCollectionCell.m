@@ -10,6 +10,7 @@
 
 @implementation PostCollectionCell
 -(void) configureCell:(Post *)post{
+    self.post = post;
     self.postImage.file = post[@"image"];
     [self.postImage loadInBackground];
 }

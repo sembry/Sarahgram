@@ -96,6 +96,12 @@
         EditProfileViewController *editVC = (EditProfileViewController *)navVC.topViewController;
         editVC.delegate = self;
     }
+    
+    if ([segue.identifier isEqualToString:@"detailSegue"]){
+        PostCollectionCell *cell = (PostCollectionCell *)sender;
+        DetailsViewController *detailVC = (DetailsViewController *)[segue destinationViewController];
+        detailVC.post = cell.post;
+    }
 }
 
 
@@ -124,6 +130,8 @@
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.posts.count;
 }
+
+
 
 
 @end

@@ -13,5 +13,6 @@
 
 @interface PostCollectionCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet PFImageView *postImage;
--(void) configureCell:(Post *)post; 
+-(void) configureCell:(Post *)post;
+@property (strong, nonatomic) Post *post;
 @end

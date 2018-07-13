@@ -257,6 +257,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="postImage" destination="g6T-Ix-1Hy" id="126-xp-N7Z"/>
+                                            <segue destination="LRe-cS-Zs4" kind="show" identifier="detailSegue" id="9mi-7J-oXv"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -577,6 +578,7 @@
         <image name="profile_tab" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="9mi-7J-oXv"/>
         <segue reference="QsA-re-GVX"/>
     </inferredMetricsTieBreakers>
 </document>
