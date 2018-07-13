@@ -12,6 +12,10 @@
 #import "Post.h"
 #import "UIImageView+AFNetworking.h"
 
-@interface EditProfileViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@protocol EditProfileViewControllerDelegate
+- (void) didFinishEditing;
+@end
 
+@interface EditProfileViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@property (weak, nonatomic) id<EditProfileViewControllerDelegate> delegate;
 @end

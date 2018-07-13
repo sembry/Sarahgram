@@ -222,7 +222,7 @@
                                     <color key="titleColor" red="0.81171875000000004" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="yKc-XP-g6k" kind="presentation" id="VCF-Dd-hmt"/>
+                                    <segue destination="yKc-XP-g6k" kind="presentation" identifier="editSegue" id="VCF-Dd-hmt"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="c4A-M7-Ci7">
@@ -313,14 +313,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1kc-aY-1Jz">
-                                <rect key="frame" x="115" y="75" width="145" height="145"/>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="image_placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="ZKf-z6-rSg">
+                                <rect key="frame" x="115" y="75" width="145" height="146"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="image_placeholder"/>
+                                <gestureRecognizers/>
                                 <connections>
-                                    <action selector="didTapPic:" destination="gh6-e9-jIH" eventType="touchUpInside" id="DdE-me-W19"/>
+                                    <outletCollection property="gestureRecognizers" destination="3ra-B0-QdN" appends="YES" id="ZTl-px-UQN"/>
                                 </connections>
-                            </button>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyH-AR-jQ2">
                                 <rect key="frame" x="32" y="308" width="25" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -347,11 +347,16 @@
                     <connections>
                         <outlet property="bio" destination="jwk-fU-CZx" id="gKV-oU-Yr5"/>
                         <outlet property="name" destination="y7n-Rz-U75" id="58j-wc-tkw"/>
-                        <outlet property="profilePic" destination="1kc-aY-1Jz" id="v0Y-h3-5K0"/>
+                        <outlet property="profilePic" destination="ZKf-z6-rSg" id="mik-Hn-1iC"/>
                         <outlet property="username" destination="qNX-2a-3vW" id="0wS-mA-08s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v9n-qf-YPs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="3ra-B0-QdN">
+                    <connections>
+                        <action selector="didTapPic:" destination="gh6-e9-jIH" id="3hk-uZ-d04"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="6088.8000000000002" y="-667.01649175412297"/>
         </scene>

@@ -11,14 +11,15 @@
 @interface EditProfileViewController ()
 - (IBAction)didTapSave:(id)sender;
 - (IBAction)didTapCancel:(id)sender;
+- (IBAction)didTapPic:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *name;
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *bio;
-@property (weak, nonatomic) IBOutlet UIButton *profilePic;
+@property (weak, nonatomic) IBOutlet UIImageView *profilePic;
 @property (strong, nonatomic) UIImage *resizedImage;
-- (IBAction)didTapPic:(id)sender;
+
 @property (strong, nonatomic) PFUser *user;
-@property (strong, nonatomic) UIImageView *profileImage;
+
 
 @end
 
@@ -28,16 +29,16 @@
     [super viewDidLoad];
     self.user = PFUser.currentUser;
     // Do any additional setup after loading the view.
-    
+    [self setProperties];
+
+}
+
+- (void) setProperties{
     if(self.user[@"profileImage"] != nil){
         PFFile *profile = self.user[@"profileImage"];
         NSURL *profileURL = [NSURL URLWithString:profile.url];
-        [self.profileImage setImageWithURL:profileURL];
-        
-        
-        [self.profilePic setImage:self.profileImage.image forState:UIControlStateNormal];
-       
-
+        [self.profilePic setImageWithURL:profileURL];
+        self.resizedImage = self.profilePic.image;
     }
     if (![self.user[@"name"] isEqualToString:@""]) {
         self.name.text = self.user[@"name"];
@@ -63,9 +64,7 @@
 }
 */
 
-- (IBAction)didTapPic:(id)sender {
-    [self selectPicture];
-}
+
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
@@ -76,7 +75,7 @@
     // Do something with the images (based on your use case)
     CGSize size = CGSizeMake(450, 450);
     self.resizedImage = [self resizeImage:editedImage withSize:size];
-    [self.profilePic setImage:self.resizedImage forState:UIControlStateNormal];
+    self.profilePic.image = self.resizedImage;
     
     
     
@@ -114,7 +113,7 @@
     PFUser.currentUser[@"bio"] = self.bio.text;
     
     //change profile image
-    PFUser.currentUser[@"profileImage"] = [Post getPFFileFromImage:self.resizedImage];
+    PFUser.currentUser[@"profileImage"] = [Post getPFFileFromImage:self.profilePic.image];
 
     [PFUser.currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if(error){
@@ -122,6 +121,7 @@
         }
         else{
             NSLog(@"yay");
+            [self.delegate didFinishEditing];
         }
     }];
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -129,5 +129,10 @@
 
 - (IBAction)didTapCancel:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)didTapPic:(id)sender {
+    NSLog(@"no");
+    [self selectPicture];
 }
 @end

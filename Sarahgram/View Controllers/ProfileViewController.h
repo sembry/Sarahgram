@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "Parse.h"
 #import "ParseUI.h"
+#import "EditProfileViewController.h"
 
-@interface ProfileViewController : UIViewController
+@interface ProfileViewController : UIViewController <EditProfileViewControllerDelegate>
 
 @end
