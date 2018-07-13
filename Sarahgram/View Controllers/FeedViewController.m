@@ -87,7 +87,6 @@
         PostCell *cell = (PostCell *)sender;
         ProfileViewController *profileViewController = [segue destinationViewController];
         profileViewController.user = cell.post.user;
-        NSLog(@"%@", cell.post.user);
     }
     
     

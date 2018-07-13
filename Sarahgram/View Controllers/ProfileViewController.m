@@ -22,7 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
 
 @property (strong, nonatomic) NSArray *posts;
-
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 @end
 
 @implementation ProfileViewController
@@ -33,16 +33,12 @@
     self.postView.delegate = self;
     self.postView.dataSource = self;
     
-    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *) self.postView.collectionViewLayout;
-    layout.minimumInteritemSpacing = 2;
-    layout.minimumLineSpacing = 2;
-    CGFloat postsPerLine = 3;
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.tintColor = [UIColor grayColor];
+    [self.refreshControl addTarget:self action:@selector(fetchUserPosts) forControlEvents:UIControlEventValueChanged];
+    [self.postView addSubview:self.refreshControl];
     
-    NSLog(@"%f", self.postView.frame.size.width);
-    CGFloat itemWidth = (self.postView.frame.size.width - (layout.minimumInteritemSpacing * (postsPerLine -1))) / postsPerLine;
-    NSLog(@"%f", itemWidth);
-    layout.itemSize = CGSizeMake(itemWidth, itemWidth);
-    
+    [self formatPosts];
     //edit profile button only shows/works if viewing the profile of the user currently signed in
     if(self.user == nil || [self.user.objectId isEqualToString: PFUser.currentUser.objectId]){
         self.user = PFUser.currentUser;
@@ -60,6 +56,16 @@
     [self configureProfile:self.user];
 }
 
+-(void) formatPosts{
+    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *) self.postView.collectionViewLayout;
+    layout.minimumInteritemSpacing = 2;
+    layout.minimumLineSpacing = 2;
+    CGFloat postsPerLine = 3;
+    
+    CGFloat itemWidth = (self.postView.frame.size.width - (layout.minimumInteritemSpacing * (postsPerLine -1))) / postsPerLine;
+    layout.itemSize = CGSizeMake(itemWidth, itemWidth);
+}
+
 - (void) fetchUserPosts{
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query includeKey:@"user"];
@@ -71,7 +77,8 @@
         if (posts != nil) {
             //the array of objects returned by the call
             self.posts = posts;
-            [self.postView reloadData];
+            [self.refreshControl endRefreshing];
+            [self.postView reloadData]; 
         } else {
             NSLog(@"%@", error.localizedDescription);
         }
@@ -106,6 +113,7 @@
 
 
 - (void) configureProfile:(PFUser *) user{
+    
     self.username.text = [@"@" stringByAppendingString:user.username];
     self.name.text = user[@"name"];
     self.bio.text = user[@"bio"];
