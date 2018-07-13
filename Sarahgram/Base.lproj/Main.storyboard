@@ -231,25 +231,30 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dAP-JF-Vly">
-                                    <size key="itemSize" width="121" height="121"/>
+                                    <size key="itemSize" width="116" height="116"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PostCollectionCell" id="0bl-Qz-eM6" customClass="PostCollectionCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="116" height="116"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="116" height="116"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g6T-Ix-1Hy" customClass="PFImageView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="121" height="121"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g6T-Ix-1Hy" customClass="PFImageView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="116" height="116"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="g6T-Ix-1Hy" firstAttribute="top" secondItem="0bl-Qz-eM6" secondAttribute="top" id="QDe-ao-LZs"/>
+                                            <constraint firstAttribute="bottom" secondItem="g6T-Ix-1Hy" secondAttribute="bottom" id="bBB-Ug-0YA"/>
+                                            <constraint firstItem="g6T-Ix-1Hy" firstAttribute="leading" secondItem="0bl-Qz-eM6" secondAttribute="leading" id="kLa-uX-qAj"/>
+                                            <constraint firstAttribute="trailing" secondItem="g6T-Ix-1Hy" secondAttribute="trailing" id="z5P-oo-wHd"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="postImage" destination="g6T-Ix-1Hy" id="126-xp-N7Z"/>
                                         </connections>
@@ -260,6 +265,13 @@
                                 <rect key="frame" x="158" y="73" width="67" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Posts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UaQ-NH-flm">
+                                <rect key="frame" x="10" y="222" width="130" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -274,6 +286,7 @@
                         <outlet property="name" destination="OQj-Zg-KGC" id="aUt-ht-Hxv"/>
                         <outlet property="postView" destination="c4A-M7-Ci7" id="hwJ-Fx-qin"/>
                         <outlet property="profileImage" destination="jdB-V7-apc" id="2Mg-kP-rMy"/>
+                        <outlet property="userPostsLabel" destination="UaQ-NH-flm" id="RbJ-gV-3hj"/>
                         <outlet property="username" destination="pQX-rK-NbV" id="CI3-6D-Od0"/>
                     </connections>
                 </viewController>

@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet PFImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UILabel *username;
 @property (weak, nonatomic) IBOutlet UILabel *bio;
+@property (weak, nonatomic) IBOutlet UILabel *userPostsLabel;
 
 
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
@@ -32,16 +33,28 @@
     self.postView.delegate = self;
     self.postView.dataSource = self;
     
+    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *) self.postView.collectionViewLayout;
+    layout.minimumInteritemSpacing = 2;
+    layout.minimumLineSpacing = 2;
+    CGFloat postsPerLine = 3;
+    
+    NSLog(@"%f", self.postView.frame.size.width);
+    CGFloat itemWidth = (self.postView.frame.size.width - (layout.minimumInteritemSpacing * (postsPerLine -1))) / postsPerLine;
+    NSLog(@"%f", itemWidth);
+    layout.itemSize = CGSizeMake(itemWidth, itemWidth);
+    
     //edit profile button only shows/works if viewing the profile of the user currently signed in
     if(self.user == nil || [self.user.objectId isEqualToString: PFUser.currentUser.objectId]){
         self.user = PFUser.currentUser;
         self.editButton.hidden = NO;
         self.editButton.enabled = YES;
+        self.userPostsLabel.hidden = YES;
     }
     //logged in user can't edit other users' profiles
     else{
         self.editButton.hidden = YES;
         self.editButton.enabled = NO;
+        self.userPostsLabel.hidden = NO;
     }
     [self fetchUserPosts];
     [self configureProfile:self.user];
