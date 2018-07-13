@@ -13,6 +13,7 @@
 #import "Post.h"
 #import "Parse.h"
 #import "DetailsViewController.h"
+#import "ProfileViewController.h"
 
 @interface FeedViewController ()
 
@@ -44,6 +45,7 @@
 
 - (void) fetchPosts{
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    [query includeKey:@"user"];
     [query orderByDescending:@"createdAt"];
     query.limit = 20;
     
@@ -72,15 +74,23 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    
+
     if([segue.identifier isEqualToString:@"detailSegue"]){
-    UITableView *tappedCell = sender;
-    NSIndexPath *indexPath = [self.postView indexPathForCell:tappedCell];
-    Post *post = self.posts[indexPath.row];
-    
-    DetailsViewController *detailsViewController = [segue destinationViewController];
-    detailsViewController.post = post;
+        UITableView *tappedCell = sender;
+        NSIndexPath *indexPath = [self.postView indexPathForCell:tappedCell];
+        Post *post = self.posts[indexPath.row];
+        DetailsViewController *detailsViewController = [segue destinationViewController];
+        detailsViewController.post = post;
     }
+    
+    else if([segue.identifier isEqualToString:@"userSegue"]){
+        PostCell *cell = (PostCell *)sender;
+        ProfileViewController *profileViewController = [segue destinationViewController];
+        profileViewController.user = cell.post.user;
+        NSLog(@"%@", cell.post.user);
+    }
+    
+    
     
 }
 
@@ -105,6 +115,10 @@
     PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
     Post *post = self.posts[indexPath.row];
     [cell configureCell:post];
+    
+    UITapGestureRecognizer *usernameGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapUsername:)];
+    [cell.username addGestureRecognizer:usernameGesture];
+    
     return cell;
 }
 
@@ -112,6 +126,14 @@
     return self.posts.count;
 }
 
+- (IBAction) didTapUsername:(id)sender{
+    UITapGestureRecognizer *gesture = (UITapGestureRecognizer *)sender;
+   //accessing label that gesture recognizer was on top of
+    UILabel *label = (UILabel *)gesture.view;
+    //gets the postcell superview
+    PostCell *tappedCell = (PostCell *)label.superview.superview.superview.superview;
+    [self performSegueWithIdentifier:@"userSegue" sender:tappedCell];
+}
 
 
 

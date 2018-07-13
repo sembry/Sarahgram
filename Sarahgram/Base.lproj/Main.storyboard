@@ -111,9 +111,9 @@
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="oJ6-0M-JxO">
                                                             <rect key="frame" x="0.0" y="369" width="369" height="105.5"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1eg-9R-ztZ">
+                                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1eg-9R-ztZ">
                                                                     <rect key="frame" x="0.0" y="0.0" width="369" height="86.5"/>
-                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                                                     <color key="textColor" red="0.53146852919999998" green="0.37270627680000001" blue="0.76350333120000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
@@ -163,6 +163,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="postView" destination="PSi-fm-0vk" id="oYq-Kd-Bgc"/>
+                        <segue destination="3Qp-Ed-cY4" kind="show" identifier="userSegue" id="QsA-re-GVX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jSb-9F-P9x" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -268,7 +269,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z2j-VS-NCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4319.1999999999998" y="-667.01649175412297"/>
+            <point key="canvasLocation" x="3583" y="87"/>
         </scene>
         <!--Edit Profile View Controller-->
         <scene sceneID="cte-gQ-RAO">
@@ -358,7 +359,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="6088.8000000000002" y="-667.01649175412297"/>
+            <point key="canvasLocation" x="5322" y="63"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="tsc-hm-ISr">
@@ -411,7 +412,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="22a-vY-kKM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2605.5999999999999" y="86.806596701649184"/>
+            <point key="canvasLocation" x="2804" y="869"/>
         </scene>
         <!--Compose View Controller-->
         <scene sceneID="CKw-GG-qN2">
@@ -469,7 +470,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="USz-bi-KbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2448.8000000000002" y="868.51574212893559"/>
+            <point key="canvasLocation" x="1790" y="869"/>
         </scene>
         <!--Feed-->
         <scene sceneID="GTv-ML-VHc">
@@ -506,7 +507,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="juZ-DX-3dj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1742" y="869"/>
+            <point key="canvasLocation" x="990" y="869"/>
         </scene>
         <!--Profile-->
         <scene sceneID="TzS-t8-Y6o">
@@ -543,7 +544,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="leq-Se-pTt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5149.6000000000004" y="-667.01649175412297"/>
+            <point key="canvasLocation" x="4522" y="63"/>
         </scene>
     </scenes>
     <resources>
@@ -552,4 +553,7 @@
         <image name="insta_camera_btn" width="25" height="25"/>
         <image name="profile_tab" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="QsA-re-GVX"/>
+    </inferredMetricsTieBreakers>
 </document>

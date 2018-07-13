@@ -12,5 +12,5 @@
 #import "EditProfileViewController.h"
 
 @interface ProfileViewController : UIViewController <EditProfileViewControllerDelegate>
-
+@property (strong, nonatomic) PFUser *user;
 @end

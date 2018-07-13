@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet PFImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UILabel *username;
 @property (weak, nonatomic) IBOutlet UILabel *bio;
+
 //- (IBAction)didTapEdit:(id)sender;
 
 @end
@@ -25,7 +26,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self configureProfile:PFUser.currentUser];
+    if(self.user == nil){
+        NSLog(@"woof");
+        self.user = PFUser.currentUser;
+    }
+    [self configureProfile:self.user];
 }
 
 - (void)didReceiveMemoryWarning {
