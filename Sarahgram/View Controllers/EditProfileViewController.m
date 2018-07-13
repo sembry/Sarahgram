@@ -120,7 +120,7 @@
             NSLog(error.localizedDescription);
         }
         else{
-            NSLog(@"yay");
+            
             [self.delegate didFinishEditing];
         }
     }];
@@ -132,7 +132,6 @@
 }
 
 - (IBAction)didTapPic:(id)sender {
-    NSLog(@"no");
     [self selectPicture];
 }
 @end

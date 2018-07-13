@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		712DB38E20F85CE000BFDB62 /* PostCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 712DB38D20F85CE000BFDB62 /* PostCollectionCell.m */; };
 		71499E9720F411B200A2595F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71499E9620F411B200A2595F /* AppDelegate.m */; };
 		71499E9D20F411B200A2595F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71499E9B20F411B200A2595F /* Main.storyboard */; };
 		71499E9F20F411B400A2595F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71499E9E20F411B400A2595F /* Assets.xcassets */; };
@@ -27,6 +28,8 @@
 		29DF87025CCA3F73CCF71621 /* Pods-Sarahgram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sarahgram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sarahgram/Pods-Sarahgram.release.xcconfig"; sourceTree = "<group>"; };
 		381E194887204D88A5B8E020 /* libPods-Sarahgram.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Sarahgram.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		64B9466D3AF5A7933F33AD8C /* Pods-Sarahgram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sarahgram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sarahgram/Pods-Sarahgram.debug.xcconfig"; sourceTree = "<group>"; };
+		712DB38C20F85CE000BFDB62 /* PostCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCollectionCell.h; sourceTree = "<group>"; };
+		712DB38D20F85CE000BFDB62 /* PostCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCollectionCell.m; sourceTree = "<group>"; };
 		71499E9220F411B200A2595F /* Sarahgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sarahgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71499E9520F411B200A2595F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		71499E9620F411B200A2595F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -74,6 +77,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		712DB38B20F85CB200BFDB62 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				71499EBA20F52AD700A2595F /* PostCell.h */,
+				71499EBB20F52AD700A2595F /* PostCell.m */,
+				712DB38C20F85CE000BFDB62 /* PostCollectionCell.h */,
+				712DB38D20F85CE000BFDB62 /* PostCollectionCell.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		71499E8920F411B200A2595F = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +109,7 @@
 		71499E9420F411B200A2595F /* Sarahgram */ = {
 			isa = PBXGroup;
 			children = (
+				712DB38B20F85CB200BFDB62 /* Views */,
 				71499EB620F525FC00A2595F /* Models */,
 				71499E9520F411B200A2595F /* AppDelegate.h */,
 				71499E9620F411B200A2595F /* AppDelegate.m */,
@@ -104,8 +119,6 @@
 				71499EA320F411B400A2595F /* Info.plist */,
 				71499EA420F411B400A2595F /* main.m */,
 				71499EB420F525E100A2595F /* View Controllers */,
-				71499EBA20F52AD700A2595F /* PostCell.h */,
-				71499EBB20F52AD700A2595F /* PostCell.m */,
 			);
 			path = Sarahgram;
 			sourceTree = "<group>";
@@ -265,6 +278,7 @@
 			files = (
 				71499EB920F5263B00A2595F /* Post.m in Sources */,
 				71CD5B5920F7F2E9009C12FA /* ProfileViewController.m in Sources */,
+				712DB38E20F85CE000BFDB62 /* PostCollectionCell.m in Sources */,
 				71CD5B5C20F7FA85009C12FA /* EditProfileViewController.m in Sources */,
 				71499EA520F411B400A2595F /* main.m in Sources */,
 				71499E9720F411B200A2595F /* AppDelegate.m in Sources */,

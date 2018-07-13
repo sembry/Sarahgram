@@ -33,14 +33,12 @@
     
     // check if image is not nil
     if (!image) {
-        NSLog(@"hi");
         return nil;
     }
     
     NSData *imageData = UIImagePNGRepresentation(image);
     // get image data and check if that is not nil
     if (!imageData) {
-        NSLog(@"i hate everything");
         return nil;
     }
     

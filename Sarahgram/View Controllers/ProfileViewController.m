@@ -20,6 +20,8 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *editButton;
 
+@property (strong, nonatomic) NSArray *posts;
+
 @end
 
 @implementation ProfileViewController
@@ -27,19 +29,42 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"%@", PFUser.currentUser.objectId);
-    NSLog(@"%@", self.user.objectId);
+    self.postView.delegate = self;
+    self.postView.dataSource = self;
+    
+    //edit profile button only shows/works if viewing the profile of the user currently signed in
     if(self.user == nil || [self.user.objectId isEqualToString: PFUser.currentUser.objectId]){
         self.user = PFUser.currentUser;
         self.editButton.hidden = NO;
         self.editButton.enabled = YES;
     }
+    //logged in user can't edit other users' profiles
     else{
         self.editButton.hidden = YES;
         self.editButton.enabled = NO;
     }
+    [self fetchUserPosts];
     [self configureProfile:self.user];
 }
+
+- (void) fetchUserPosts{
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    [query includeKey:@"user"];
+    [query whereKey:@"user" equalTo:self.user];
+    [query orderByDescending:@"createdAt"];
+    
+    // fetch data asynchronously
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+        if (posts != nil) {
+            //the array of objects returned by the call
+            self.posts = posts;
+            [self.postView reloadData];
+        } else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -75,4 +100,17 @@
 -(void) didFinishEditing{
     [self configureProfile:PFUser.currentUser];
 }
+- (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    PostCollectionCell *cell = [self.postView dequeueReusableCellWithReuseIdentifier:@"PostCollectionCell" forIndexPath:indexPath]; 
+    Post *post = self.posts[indexPath.item];
+    [cell configureCell:post];
+    return cell;
+    
+}
+
+- (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.posts.count;
+}
+
+
 @end

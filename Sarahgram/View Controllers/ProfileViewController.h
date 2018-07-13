@@ -10,7 +10,9 @@
 #import "Parse.h"
 #import "ParseUI.h"
 #import "EditProfileViewController.h"
+#import "Post.h"
+#import "PostCollectionCell.h"
 
-@interface ProfileViewController : UIViewController <EditProfileViewControllerDelegate>
+@interface ProfileViewController : UIViewController <EditProfileViewControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
 @property (strong, nonatomic) PFUser *user;
 @end
