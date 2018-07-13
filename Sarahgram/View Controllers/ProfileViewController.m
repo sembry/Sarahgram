@@ -17,7 +17,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *username;
 @property (weak, nonatomic) IBOutlet UILabel *bio;
 
-//- (IBAction)didTapEdit:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIButton *editButton;
 
 @end
 
@@ -26,9 +27,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    if(self.user == nil){
-        NSLog(@"woof");
+    NSLog(@"%@", PFUser.currentUser.objectId);
+    NSLog(@"%@", self.user.objectId);
+    if(self.user == nil || [self.user.objectId isEqualToString: PFUser.currentUser.objectId]){
         self.user = PFUser.currentUser;
+        self.editButton.hidden = NO;
+        self.editButton.enabled = YES;
+    }
+    else{
+        self.editButton.hidden = YES;
+        self.editButton.enabled = NO;
     }
     [self configureProfile:self.user];
 }

@@ -261,6 +261,7 @@
                     <navigationItem key="navigationItem" title="Profile" id="boy-Eq-cU3"/>
                     <connections>
                         <outlet property="bio" destination="nZS-PE-54i" id="lUa-XR-DWE"/>
+                        <outlet property="editButton" destination="ePZ-ik-5uk" id="EbK-Vc-WES"/>
                         <outlet property="name" destination="OQj-Zg-KGC" id="aUt-ht-Hxv"/>
                         <outlet property="postView" destination="c4A-M7-Ci7" id="hwJ-Fx-qin"/>
                         <outlet property="profileImage" destination="jdB-V7-apc" id="2Mg-kP-rMy"/>
@@ -269,7 +270,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z2j-VS-NCL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3583" y="87"/>
+            <point key="canvasLocation" x="3581.5999999999999" y="86.806596701649184"/>
         </scene>
         <!--Edit Profile View Controller-->
         <scene sceneID="cte-gQ-RAO">
